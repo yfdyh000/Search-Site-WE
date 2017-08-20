@@ -146,15 +146,23 @@ function addListeners()
 
     /* Context menu listener */
 
-    chrome.contextMenus.onClicked.addListener(
-    function(info,tab)
-    {
+    function handleMenusClicked(info, tab) {
+        if (!info.selectionText) {
+            browser.tabs.executeScript({
+                code: "prompt('Input search keyword for this site:')"
+            }).then(function (result) {
+                info.selectionText = result;
+                handleMenusClicked(info, tab);
+            });
+            return;
+        }
         if (encloseQuotes) info.selectionText = "\"" + info.selectionText + "\"";
 
-        if (info.menuItemId == "defaultdomain") searchSiteForText(defaultDomain,info.selectionText,openNewTab);
-        else if (info.menuItemId == "subdomain") searchSiteForText(0,info.selectionText,openNewTab);
-        else if (info.menuItemId == "entiredomain") searchSiteForText(1,info.selectionText,openNewTab);
-    });
+        if (info.menuItemId == "defaultdomain") searchSiteForText(defaultDomain, info.selectionText, openNewTab);
+        else if (info.menuItemId == "subdomain") searchSiteForText(0, info.selectionText, openNewTab);
+        else if (info.menuItemId == "entiredomain") searchSiteForText(1, info.selectionText, openNewTab);
+    }
+    chrome.contextMenus.onClicked.addListener(handleMenusClicked);
 
     /* Web navigation listeners */
 

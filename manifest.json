@@ -17,6 +17,7 @@
     },
     "minimum_chrome_version": "35",
     "permissions": [
+        "activeTab",
         "contextMenus",
         "notifications",
         "storage",
