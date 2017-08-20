@@ -1,0 +1,231 @@
+﻿<!--
+/************************************************************************/
+/*                                                                      */
+/*      Search Site WE - Generic WebExtension - Options Page            */
+/*                                                                      */
+/*      HTML and CSS for Options Page                                   */
+/*                                                                      */
+/*      Last Edit - 04 May 2017                                         */
+/*                                                                      */
+/*      Copyright (C) 2016-2017 DW-dev                                  */
+/*                                                                      */
+/*      Distributed under the GNU General Public License version 2      */
+/*      See LICENCE.txt file and http://www.gnu.org/licenses/           */
+/*                                                                      */
+/************************************************************************/
+-->
+
+<html>
+    
+    <head>
+        
+        <meta charset="utf-8"/>
+        
+        <title>Search Site WE Options</title>
+        
+        <script src="options.js"></script>
+        
+        <style>
+            
+            #options
+            {
+                display: flex;
+                font-family: "Segoe UI","Helvetica Neue",Ubuntu,Arial;
+                font-size: 12px;
+            }
+            
+            #options *
+            {
+                font-family: "Segoe UI","Helvetica Neue",Ubuntu,Arial;
+                font-size: 12px;
+            }
+            
+            #options-title
+            {
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+            
+            form
+            {
+                margin-bottom: 10px;
+            }
+            
+            fieldset div
+            {
+                display: flex;
+                margin: 5px 5px 5px 0px;
+            }
+            
+            fieldset input[type="checkbox"]
+            {
+                margin-right: 7px;
+                vertical-align: 0px;
+            }
+            
+            fieldset input[type="radio"]
+            {
+                margin-left: 4px;
+                margin-right: 7px;
+                vertical-align: 0px;
+            }
+            
+            fieldset label
+            {
+                vertical-align: 1px;
+            }
+            
+            fieldset table
+            {
+                font-size: 14px;
+                margin-left: -1px;
+                margin-top: 1px;
+                border-collapse: collapse;
+            }
+            
+            fieldset td
+            {
+                padding-top: 4px;
+            }
+            
+            fieldset td:first-child
+            {
+                margin-right: 20px;
+            }
+            
+            fieldset table + div
+            {
+                margin-top: 10px;
+            }
+            
+            fieldset table + div label
+            {
+                margin-left: 4px;
+            }
+            
+            fieldset table + div input[type="text"]
+            {
+                width: 30px;
+                height: 21px;
+                margin-left: 15px;
+                margin-top: -2px;
+                padding: 1px 3px 1px 3px;
+                text-align: center;
+            }
+            
+            #options-save
+            {
+                margin-top: 18px;
+            }
+            
+            #options-save-button
+            {
+                width: 70px;
+                margin-left: 2px;
+                margin-bottom: 2px;
+                padding-bottom: 2px;
+                text-align: center;
+            }
+            
+            #options-save-status
+            {
+                margin-left: 20px;
+                color: #404040;
+                visibility: hidden;
+            }
+            
+            /* Changes for new Firefox 55 controls */
+            
+            body[ffversion="55"] fieldset table + div label
+            {
+                margin-left: 0px;
+            }
+            
+            body[ffversion="55"] #options-save-button
+            {
+                padding-top: 2px;
+            }
+            
+            body[ffversion="55"] #options-save-status
+            {
+                padding-top: 2px;
+            }
+            
+        </style>
+        
+    </head>
+    
+    <body>
+        
+        <div id="options">
+            
+            <div>
+                
+                <div id="options-title">Search Site WE Options</div>
+                
+                <form id="options-defaultdomain">
+                    <fieldset>
+                        <legend>&nbsp;Default Domain&nbsp;</legend>
+                        <div>
+                            <input id="options-subdomain" type="radio" name="domain" value="0"/><label for="options-subdomain">Subdomain</label>
+                        </div>
+                        <div>
+                            <input id="options-entiredomain" type="radio" name="domain" value="1"/><label for="options-entiredomain">Entire Domain</label>
+                        </div>
+                    </fieldset>
+                </form>
+                
+                <form id="options-searchengine">
+                    <fieldset>
+                        <legend>&nbsp;Search Engine&nbsp;</legend>
+                        <table>
+                            <colgroup>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <tr>
+                                <td><input id="options-google" type="radio" name="engine" value="0"/><label for="options-google">Google</label></td>
+                                <td><input id="options-bing" type="radio" name="engine" value="1"/><label for="options-bing">Bing</label></td>
+                            </tr>
+                            <tr>
+                                <td><input id="options-yahoo" type="radio" name="engine" value="2"/><label for="options-yahoo">Yahoo</label></td>
+                                <td><input id="options-ask" type="radio" name="engine" value="3"/><label for="options-ask">Ask</label></td>
+                            </tr>
+                            <tr>
+                                <td><input id="options-duckduckgo" type="radio" name="engine" value="4"/><label for="options-duckduckgo">DuckDuckGo</label></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <div>
+                            <label for="options-countrycode">Country Code:</label><input id="options-countrycode" type="text"/>
+                        </div>
+                    </fieldset>
+                </form>
+                
+                <form>
+                    <fieldset>
+                        <legend>&nbsp;Context Menu&nbsp;</legend>
+                        <div>
+                            <input id="options-showseparate" type="checkbox"/><label for="options-showsubmenu">Show separate domain menu items</label>
+                        </div>
+                        <div>
+                            <input id="options-enclosequotes" type="checkbox"/><label for="options-enclosequotes">Enclose selected text in quotes</label>
+                        </div>
+                        <div>
+                            <input id="options-opennewtab" type="checkbox"/><label for="options-opennewtab">Open search results in new tab</label>
+                        </div>
+                    </fieldset>
+                </form>
+                
+                <div id="options-save">
+                    <button id="options-save-button">Save</button>
+                    <span id="options-save-status">Saved</span>
+                </div>
+                
+            </div>
+            
+        </div>
+
+    </body>
+    
+</html>

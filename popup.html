@@ -1,0 +1,123 @@
+﻿<!--
+/************************************************************************/
+/*                                                                      */
+/*      Search Site WE - Generic WebExtension - Popup Page              */
+/*                                                                      */
+/*      HTML and CSS for Popup Page                                     */
+/*                                                                      */
+/*      Last Edit - 09 Nov 2016                                         */
+/*                                                                      */
+/*      Copyright (C) 2016 DW-dev                                       */
+/*                                                                      */
+/*      Distributed under the GNU General Public License version 2      */
+/*      See LICENCE.txt file and http://www.gnu.org/licenses/           */
+/*                                                                      */
+/************************************************************************/
+-->
+
+<html>
+    
+    <head>
+        
+        <meta charset="utf-8"/>
+        
+        <script src="popup.js"></script>
+        
+        <style>
+            
+            body
+            {
+                display: flex;
+                margin: 0px;
+            }
+            
+            #popup
+            {
+                font-family: Segoe UI;
+                font-size: 14px;
+            }
+            
+            #popup-textbox
+            {
+                height: 24px;
+                width: 422px;
+                margin: 10px 10px 10px 10px;
+                padding: 0px 4p 1px;
+                border: 1px solid #88C7FE;
+                font-family: Segoe UI;
+                font-size: 14px;
+            }
+            
+            button::-moz-focus-inner
+            {
+                border: 0px;
+                padding: 0px;
+            }
+            
+            #popup-subdomain
+            {
+                height: 24px;
+                margin: 0px 7px 10px 10px;
+                padding: 0px 4px 2px;
+                border: 1px solid #A5A5A5;
+                font-family: Segoe UI;
+                font-size: 14px;
+                text-align: center;
+            }
+            
+            #popup-entiredomain
+            {
+                height: 24px;
+                margin: 0px 8px 10px 0px;
+                padding: 0px 4px 2px;
+                border: 1px solid #A5A5A5;
+                font-family: Segoe UI;
+                font-size: 14px;
+                text-align: center;
+            }
+            
+            #popup-opennewtab
+            {
+                display: inline;
+                vertical-align: -2px;
+            }
+            
+            label
+            {
+                margin: 0px 9px 0px 4px;
+                font-family: Segoe UI;
+                font-size: 14px;
+            }
+            
+            label::before
+            {
+                display: none;
+            }
+            
+        </style>
+        
+    </head>
+    
+    <body>
+        
+        <div id="popup">
+            
+            <div>
+                
+                <input id="popup-textbox" type="textbox" autocomplete="off"/>
+                
+            </div>
+            
+            <div>
+                
+                <button id="popup-subdomain">Search Subdomain</button>
+                <button id="popup-entiredomain">Search Entire Domain</button>
+                <input id="popup-opennewtab" type="checkbox"/><label for="popup-opennewtab">Open in new tab</label>
+                
+            </div>
+            
+        </div>        
+        
+    </body>
+    
+</html>
