@@ -70,7 +70,7 @@ function(object)
     if (!("options-defaultdomain" in object)) object["options-defaultdomain"] = 0;
 
     if (!("options-searchengine" in object)) object["options-searchengine"] = 0;
-    if (!("options-countrycode" in object)) object["options-countrycode"] = "uk";
+    if (!("options-countrycode" in object)) object["options-countrycode"] = "com";
 
     if (!("options-showseparate" in object)) object["options-showseparate"] = false;
     if (!("options-enclosequotes" in object)) object["options-enclosequotes"] = false;
