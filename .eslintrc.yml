@@ -1,0 +1,20 @@
+root: true
+
+env:
+  browser: true
+  es6: true
+  webextensions: true
+
+extends:
+  eslint:recommended
+
+globals:
+  getPublicSuffix: false
+
+parserOptions:
+  ecmaVersion: 6
+
+rules:
+  no-console: 1
+  no-unused-vars: 1
+  no-empty: 1

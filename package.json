@@ -1,0 +1,14 @@
+{
+  "name": "",
+  "description": "",
+  "devDependencies": {
+    "eslint": "^4.5.0",
+    "web-ext": "^2.0.0"
+  },
+  "scripts": {
+    "build": "web-ext build",
+    "lint": "eslint . && web-ext lint",
+    "test": "npm run lint"
+  },
+  "license": ""
+}
